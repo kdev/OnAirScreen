@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>OnAirScreen by saschaludwig</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>OnAirScreen</h1>
+        <p>Multi purpose &quot;OnAir Lamp&quot; solution targeted for use in professional broadcast environments</p>
+
+        <p class="view"><a href="https://github.com/saschaludwig/OnAirScreen">View the Project on GitHub <small>saschaludwig/OnAirScreen</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/saschaludwig/OnAirScreen/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/saschaludwig/OnAirScreen/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/saschaludwig/OnAirScreen">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://www.astrastudio.de/wiki/lib/exe/fetch.php?media=%20:oas.png" alt="Screenshot OnAirScreen"></p>
+
+<h3>
+<a id="onairscreen-function-keys" class="anchor" href="#onairscreen-function-keys" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen Function Keys</h3>
+
+<table>
+<thead>
+<tr>
+<th>Hotkeys</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+F or F</td>
+<td>Toggle fullscreen</td>
+</tr>
+<tr>
+<td>Ctrl+Q or Q or Ctrl+C or ESC</td>
+<td>Quit OnAirScreen</td>
+</tr>
+<tr>
+<td>Ctrl+S or Ctrl+,</td>
+<td>Open settings dialog</td>
+</tr>
+<tr>
+<td>Space or 0</td>
+<td>Timer start/stop</td>
+</tr>
+<tr>
+<td>. or , or R</td>
+<td>Timer reset to 0:00</td>
+</tr>
+<tr>
+<td>1</td>
+<td>LED1 on/off</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LED2 on/off</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LED3 on/off</td>
+</tr>
+<tr>
+<td>4</td>
+<td>LED4 on/off</td>
+</tr>
+<tr>
+<td>M or /</td>
+<td>Mic Timer start/stop</td>
+</tr>
+<tr>
+<td>P or *</td>
+<td>Phone Timer start/stop</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>opens set timer dialog</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="onairscreen-api--udp-commands" class="anchor" href="#onairscreen-api--udp-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen API / UDP Commands</h3>
+
+<p>OnAirScreen can receive API commands via UDP port 3310<br>
+Here is an easy example on how to control a local OnAirScreen instance on a linux system.</p>
+
+<p>Set LED1 Text to "FOO" and switch LED1 on:</p>
+
+<pre><code>echo "CONF:LED1:text=FOO" &gt; /dev/udp/127.0.0.1/3310
+echo "LED1:ON" &gt; /dev/udp/127.0.0.1/3310
+</code></pre>
+
+<h4>
+<a id="api-commands" class="anchor" href="#api-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Commands</h4>
+
+<table>
+<thead>
+<tr>
+<th>UDP Command</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LED1:[ON|OFF]</code></td>
+<td>switch LED1 on/off</td>
+</tr>
+<tr>
+<td><code>LED2:[ON|OFF]</code></td>
+<td>switch LED2 on/off</td>
+</tr>
+<tr>
+<td><code>LED3:[ON|OFF]</code></td>
+<td>switch LED3 on/off</td>
+</tr>
+<tr>
+<td><code>LED4:[ON|OFF]</code></td>
+<td>switch LED4 on/off</td>
+</tr>
+<tr>
+<td><code>NOW:TEXT</code></td>
+<td>set TEXT in first footer line</td>
+</tr>
+<tr>
+<td><code>NEXT:TEXT</code></td>
+<td>set TEXT in second footer line</td>
+</tr>
+<tr>
+<td><code>WARN:TEXT</code></td>
+<td>set TEXT and switch on red warning mode</td>
+</tr>
+<tr>
+<td><code>AIR1:[ON|OFF]</code></td>
+<td>start/stop Mic Timer</td>
+</tr>
+<tr>
+<td><code>AIR2:[ON|OFF]</code></td>
+<td>start/stop Phone Timer</td>
+</tr>
+<tr>
+<td><code>AIR3:[ON|OFF|RESET|TOGGLE]</code></td>
+<td>start/stop/reset/toggelt Radio Timer</td>
+</tr>
+<tr>
+<td><code>AIR3TIME:seconds</code></td>
+<td>set Radio Timer to given value in seconds</td>
+</tr>
+<tr>
+<td><code>AIR4:[ON|OFF|RESET]</code></td>
+<td>start/stop/reset Stream Timer</td>
+</tr>
+<tr>
+<td><code>CMD:REBOOT</code></td>
+<td>OS restart</td>
+</tr>
+<tr>
+<td><code>CMD:SHUTDOWN</code></td>
+<td>OS shutdown</td>
+</tr>
+<tr>
+<td><code>CMD:QUIT</code></td>
+<td>quit OnAirScreen instance</td>
+</tr>
+</tbody>
+</table>
+
+<h4>
+<a id="remote-configuration-commands" class="anchor" href="#remote-configuration-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remote Configuration Commands</h4>
+
+<p><code>CONF:General:stationname=TEXT</code><br>
+<code>CONF:General:slogan=TEXT</code><br>
+<code>CONF:General:stationcolor=COLOR</code><br>
+<code>CONF:General:slogancolor=COLOR</code><br>
+<code>CONF:LED[1-4]:used=[False|True]</code><br>
+<code>CONF:LED[1-4]:text=TEXT</code><br>
+<code>CONF:LED[1-4]:activebgcolor=COLOR</code><br>
+<code>CONF:LED[1-4]:activetextcolor=COLOR</code><br>
+<code>CONF:LED[1-4]:autoflash=[False|True]</code><br>
+<code>CONF:LED[1-4]:timedflash=[False|True]</code><br>
+<code>CONF:Clock:digital=[True|False]</code><br>
+<code>CONF:Clock:digitalhourcolor=COLOR</code><br>
+<code>CONF:Clock:digitalsecondcolor=COLOR</code><br>
+<code>CONF:Clock:digitaldigitcolor=COLOR</code><br>
+<code>CONF:Clock:logopath=PathToLogo</code><br>
+<code>CONF:Network:udpport=PORT</code><br>
+<code>CONF:Network:tcpport=PORT</code><br>
+<code>CONF:CONF:APPLY=TRUE</code><br></p>
+
+<p>more infos: <a href="https://www.astrastudio.de/wiki/onairscreen">https://www.astrastudio.de/wiki/onairscreen</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/saschaludwig">saschaludwig</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
