@@ -28,10 +28,32 @@
         </ul>
       </header>
       <section>
-        <p><img src="https://www.astrastudio.de/wiki/lib/exe/fetch.php?media=%20:oas.png" alt="Screenshot OnAirScreen"></p>
+        <p><img src="https://cdn.rawgit.com/saschaludwig/OnAirScreen/gh-pages/images/oas.png" alt="Screenshot OnAirScreen"></p>
 
-<h3>
-<a id="onairscreen-function-keys" class="anchor" href="#onairscreen-function-keys" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen Function Keys</h3>
+<h4>
+<a id="pictures-of-onairscreen-in-use" class="anchor" href="#pictures-of-onairscreen-in-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pictures of OnAirScreen in use</h4>
+
+<p><img src="https://cdn.rawgit.com/saschaludwig/OnAirScreen/gh-pages/images/OAS1.jpg" alt="OnAirScreen 1">
+<img src="https://cdn.rawgit.com/saschaludwig/OnAirScreen/gh-pages/images/OAS2.jpg" alt="OnAirScreen 2">
+<img src="https://cdn.rawgit.com/saschaludwig/OnAirScreen/gh-pages/images/OAS3.jpg" alt="OnAirScreen 3">
+<img src="https://cdn.rawgit.com/saschaludwig/OnAirScreen/gh-pages/images/OAS4.jpg" alt="OnAirScreen 4"></p>
+
+<h4>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h4>
+
+<ul>
+<li>flexible integration into existing studio setups</li>
+<li>customizable logo, colors and labels</li>
+<li>4:3 and 16:9/16:10 monitor aspect ratio support</li>
+<li>easy installation</li>
+<li>runs on RaspberryPi</li>
+<li>runs on Windows, Mac, Linux</li>
+<li>conrtolled via keyboard and network</li>
+<li>OnAir Timer, Stopwatch, Countdown and more</li>
+</ul>
+
+<h4>
+<a id="onairscreen-function-keys" class="anchor" href="#onairscreen-function-keys" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen Function Keys</h4>
 
 <table>
 <thead>
@@ -92,8 +114,8 @@
 </tbody>
 </table>
 
-<h3>
-<a id="onairscreen-api--udp-commands" class="anchor" href="#onairscreen-api--udp-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen API / UDP Commands</h3>
+<h4>
+<a id="onairscreen-api--udp-commands" class="anchor" href="#onairscreen-api--udp-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OnAirScreen API / UDP Commands</h4>
 
 <p>OnAirScreen can receive API commands via UDP port 3310<br>
 Here is an easy example on how to control a local OnAirScreen instance on a linux system.</p>
@@ -104,8 +126,8 @@ Here is an easy example on how to control a local OnAirScreen instance on a linu
 echo "LED1:ON" &gt; /dev/udp/127.0.0.1/3310
 </code></pre>
 
-<h4>
-<a id="api-commands" class="anchor" href="#api-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Commands</h4>
+<h5>
+<a id="api-commands" class="anchor" href="#api-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Commands</h5>
 
 <table>
 <thead>
@@ -178,8 +200,8 @@ echo "LED1:ON" &gt; /dev/udp/127.0.0.1/3310
 </tbody>
 </table>
 
-<h4>
-<a id="remote-configuration-commands" class="anchor" href="#remote-configuration-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remote Configuration Commands</h4>
+<h5>
+<a id="remote-configuration-commands" class="anchor" href="#remote-configuration-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remote Configuration Commands</h5>
 
 <p><code>CONF:General:stationname=TEXT</code><br>
 <code>CONF:General:slogan=TEXT</code><br>
@@ -200,7 +222,14 @@ echo "LED1:ON" &gt; /dev/udp/127.0.0.1/3310
 <code>CONF:Network:tcpport=PORT</code><br>
 <code>CONF:CONF:APPLY=TRUE</code><br></p>
 
-<p>more infos: <a href="https://www.astrastudio.de/wiki/onairscreen">https://www.astrastudio.de/wiki/onairscreen</a></p>
+<h4>
+<a id="donation" class="anchor" href="#donation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Donation</h4>
+
+<p>Do you like OnAirScreen?
+Feel free to donate.</p>
+
+<p><a href="https://flattr.com/profile/saschaludwig" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button"></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YCQKC82DLCHMG" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button"></a></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/saschaludwig">saschaludwig</a></p>
